@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+    <META http-equiv="Content-type" content="text/html" charset="euc-kr">
+    <title>:: Code Submit </title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/cover.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type = 'text/javascript'>
+    window.onload=function()
+    {
+       document.getElementById('src').focus();
+    }
+
+<!-- <link rel="shortcuticon" href="./favicon.ico"> -->
+
+</script>
+</head>
+<body  onload="prettyPrint()">
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><li><a href="../index.html">ENOW</a></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../pages/features.html">Features</a></li>
+                  <li class="active"><a href="./pages/dashboard.html">Dashboard</a></li>
+                  <li><a href="../pages/contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+
+
+      <form method=post name=srcfrom action='./post.php?pname=area'>
+      <p><br><br>language:
+
+      <select name='select'>
+      <option value='1'>C++ </option>
+      <option value='2' selected>C </option>
+      <option value='3'>Java</option>
+      <option value='6'>Python2.5</option>
+      <option value='7'>Python3.2</option>
+      <option value='8'>사실 안돼</option>
+      </select>
+
+
+      <p>Source:
+      <br><br>
+      <pre class="prettyprint linenums" style="border:4px solid #88c">
+      <textarea name='src' id='src' cols='80' rows='30'></textarea>
+      <input type=submit value='Submit' style='width:80'>
+      </pre>
+      </form>
+
+      </div>
+</body>
+<script>
+    const {ipcRenderer} = require('electron');
+    // You can also require other files to run in this process
+</script>
+
+</html>
