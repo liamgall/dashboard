@@ -45,7 +45,6 @@
           <div class="inner cover">
 
 
-      <form method=post name=srcfrom action='./post.php?pname=area'>
       <p><br><br>language:
 
       <select name='select'>
@@ -61,10 +60,41 @@
       <p>Source:
       <br><br>
       <pre class="prettyprint linenums" style="border:4px solid #88c">
-      <textarea name='src' id='src' cols='80' rows='30'></textarea>
-      <input type=submit value='Submit' style='width:80'>
+      <textarea name='src' id='textArea' cols='80' rows='30'></textarea>
+      <button type="button" value"save" id="save" onclick="saveTextasFile()">Submit</button>
       </pre>
-      </form>
+      <script type="text/javascript">
+      function saveTextAsFile() {
+          var textToWrite = document.getElementById('textArea').value.replace(/\n/g, "\r\n");
+          var textFileAsBlob = new Blob([textToWrite], {
+              type: 'text/plain'
+          });
+          var fileNameToSaveAs = "source.txt";
+
+          var downloadLink = document.createElement("a");
+          downloadLink.download = fileNameToSaveAs;
+          downloadLink.innerHTML = "Download File";
+          if (window.webkitURL != null) {
+              downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+          } else {
+              downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+              downloadLink.onclick = destroyClickedElement;
+              downloadLink.style.display = "none";
+              document.body.appendChild(downloadLink);
+          }
+
+          downloadLink.click();
+      }
+
+      var button = document.getElementById('save');
+      button.addEventListener('click', saveTextAsFile);
+
+      function destroyClickedElement(event) {
+          document.body.removeChild(event.target);
+      }
+      </script>
+
+
 
       </div>
 </body>
